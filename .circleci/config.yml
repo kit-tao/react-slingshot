@@ -26,7 +26,9 @@ jobs:
       # The orb install-packages step will also automatically cache them for faster future runs.
       - run:
           name: Run Lint
-          command: npm run lint
+          command: |
+            npm install
+            npm run lint 
   test:
     docker:
       - image: circleci/node:13.8.0
